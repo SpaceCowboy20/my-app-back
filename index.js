@@ -4,20 +4,23 @@ var mongoose = require("mongoose");
 var cors = require("cors");
 var app = express();
 var signup = require("./api/V1/controllers/signup");
+const Login = require("./api/V1/controllers/login");
+const jwt = require("jsonwebtoken");
 
 app.use(bodyParser());
 app.use(cors());
 app.post("/signup", signup);
+app.post("/login", Login);
 
 mongoose
   .connect(
     "mongodb+srv://Spacecowboy:Houloulou20@cluster0.xlfhh.mongodb.net/test"
   )
-  .then((db) => {
-    console.log("Database connected");
+  .then(() => {
+    console.log("Database Connected Successfully");
   })
-  .catch((err) => {
-    console.log(err);
+  .catch((error) => {
+    console.log(error);
   });
 
 app.listen(780);
