@@ -5,7 +5,7 @@ const product = mongoose.model("product", {
   price: Number,
   description: String,
   image: String,
-  cat: String,
+  cat: { type: mongoose.Types.ObjectId, rel: "cat" },
   date: Date,
 });
 
