@@ -6,7 +6,10 @@ const product = mongoose.model("product", {
   description: String,
   image: String,
   cat: { type: mongoose.Types.ObjectId, rel: "cat" },
-  date: Date,
+  date: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 module.exports = product;

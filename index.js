@@ -6,13 +6,15 @@ var app = express();
 var signup = require("./api/V1/controllers/signup");
 const Login = require("./api/V1/controllers/login");
 const jwt = require("jsonwebtoken");
-const router = require("./api/V1/controllers/cat");
+const cat = require("./api/V1/controllers/cat");
+const prod = require("./api/V1/controllers/product");
 
 app.use(bodyParser());
 app.use(cors());
 app.post("/signup", signup);
 app.post("/login", Login);
-app.use("/", router);
+app.use("/", cat);
+app.use("/", prod);
 
 mongoose
   .connect(
