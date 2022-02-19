@@ -8,8 +8,9 @@ prod.post("/addproduct", async (request, response) => {
   let image = request.body.image;
   let price = request.body.price;
   let description = request.body.description;
+
   Product.find({ title }, async (error, result) => {
-    if (error === null && result.length > 0) {
+    if (error !== null && result.length < 0) {
       response.status(300).json({ status: "existe déjà" });
     } else {
       try {
@@ -27,5 +28,23 @@ prod.post("/addproduct", async (request, response) => {
     }
   });
 });
+
+//get all products at once from an array
+///////////////////////////////////////////
+/* let product = request.body.products;
+product.forEach(async (item) => {
+  let exist = Product.find({ title: item.title }, async (error, result) => {
+    result ? true : false;
+  });
+  if (exist) {
+    let doc = new Product({
+      title: item.title,
+      price: item.price,
+      description: item.description,
+      image: item.image,
+    });
+    await doc.save();
+  }
+}); */
 
 module.exports = prod;
