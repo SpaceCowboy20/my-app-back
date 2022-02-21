@@ -1,7 +1,7 @@
-var mongoose = require("mongoose");
-var product = require("./product");
+const mongoose = require("mongoose");
+const product = require("./product");
 
-const Cat = mongoose.model("item", {
+let cat = mongoose.model("cat", {
   title: String,
   image: String,
   path: String,
@@ -13,4 +13,4 @@ const Cat = mongoose.model("item", {
   ],
 });
 
-module.exports = Cat;
+module.exports = cat;

@@ -1,4 +1,3 @@
-const Cat = require("../models/cat");
 const Product = require("../models/product");
 const { Router } = require("express");
 const prod = Router();

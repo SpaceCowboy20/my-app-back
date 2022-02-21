@@ -21,6 +21,7 @@ let signup = async (request, response) => {
         await doc.save();
         response.status(200).json({ status: "inscription avec succès" });
       } catch (err) {
+        console.log(err);
         response
           .status(300)
           .json({ status: "veuillez réessayer une erreur c'est produite" });

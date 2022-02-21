@@ -5,7 +5,6 @@ const user = require("./user");
 const orders = mongoose.model("orders", {
   user: {
     type: mongoose.Types.ObjectId,
-    ref: user,
   },
   products: [
     {
@@ -13,7 +12,7 @@ const orders = mongoose.model("orders", {
       ref: product,
     },
   ],
-  date: Date,
+  date: { type: Date, default: Date.now },
   status: String,
 });
 
