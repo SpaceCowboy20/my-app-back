@@ -8,7 +8,9 @@ const Login = require("./api/V1/controllers/login");
 const jwt = require("jsonwebtoken");
 /* const cat = require("./api/V1/controllers/cat");
 const prod = require("./api/V1/controllers/product"); */
-const updateHeart = require("./api/V1/controllers/heart");
+const updateHeart = require("./api/V1/controllers/updateheart");
+const getHeart = require("./api/V1/controllers/getheart");
+const neworder = require("./api/V1/controllers/neworders");
 
 app.use(bodyParser());
 app.use(cors());
@@ -16,7 +18,9 @@ app.post("/signup", signup);
 app.post("/login", Login);
 /* app.use("/", cat);
 app.use("/", prod); */
-app.post("/heart", updateHeart);
+app.post("/updateheart", updateHeart);
+app.get("/getheart", getHeart);
+app.post("/neworder", neworder);
 
 mongoose
   .connect(

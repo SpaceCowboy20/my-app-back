@@ -3,9 +3,7 @@ const product = require("./product");
 const user = require("./user");
 
 const orders = mongoose.model("orders", {
-  user: {
-    type: mongoose.Types.ObjectId,
-  },
+  userid: { type: mongoose.Types.ObjectId },
   products: [
     {
       type: mongoose.Types.ObjectId,

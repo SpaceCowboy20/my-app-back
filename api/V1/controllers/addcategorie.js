@@ -18,8 +18,8 @@ cat.post("/addcategorie", async (request, response) => {
         });
         await doc.save();
         response.status(200).json({ status: "success" });
-      } catch (err) {
-        response.status(300).json({ status: "erreur" });
+      } catch (error) {
+        response.status(300).json({ status: error });
       }
     }
   });
