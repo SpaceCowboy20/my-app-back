@@ -6,6 +6,7 @@ cat.post("/addcategorie", async (request, response) => {
   let title = request.body.title;
   let image = request.body.image;
   let path = request.body.path;
+  let products = request.body.products;
   Cat.find({ title }, async (error, result) => {
     if (error === null && result.length > 0) {
       response.status(300).json({ status: "existe déjà" });
@@ -15,6 +16,7 @@ cat.post("/addcategorie", async (request, response) => {
           title,
           image,
           path,
+          products,
         });
         await doc.save();
         response.status(200).json({ status: "success" });
