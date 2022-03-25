@@ -5,7 +5,6 @@ var cors = require("cors");
 var app = express();
 var signup = require("./api/V1/controllers/signup");
 const Login = require("./api/V1/controllers/login");
-const jwt = require("jsonwebtoken");
 const cat = require("./api/V1/controllers/addcategorie");
 const prod = require("./api/V1/controllers/addproduct");
 const updateHeart = require("./api/V1/controllers/updateheart");
@@ -15,6 +14,7 @@ const updateProd = require("./api/V1/controllers/updateproduct");
 const updateorder = require("./api/V1/controllers/updateorder");
 const getProfil = require("./api/V1/controllers/getprofile");
 const getAllProducts = require("./api/V1/controllers/getallproducts");
+const getAllCats = require("./api/V1/controllers/getCat");
 
 app.use(bodyParser());
 app.use(cors());
@@ -29,6 +29,7 @@ app.patch("/upprod", updateProd);
 app.patch("/uporder", updateorder);
 app.get("/profile", getProfil);
 app.get("/allprod", getAllProducts);
+app.get("/getcats", getAllCats);
 
 mongoose
   .connect(

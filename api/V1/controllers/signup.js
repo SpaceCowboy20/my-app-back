@@ -5,10 +5,10 @@ let signup = async (request, response) => {
   let pass = request.body.password;
   let email = request.body.email;
   let tel = request.body.tel;
+  let region = request.body.region;
 
   users.find({ username: user }, async (erreur, resultat) => {
     if (erreur === null && resultat.length > 0) {
-      console.log(resultat);
       response.status(300).json({ status: "cet utilisateur existe déjà" });
     } else {
       try {
@@ -17,6 +17,7 @@ let signup = async (request, response) => {
           password: pass,
           email: email,
           tel: tel,
+          region,
         });
         await doc.save();
         response.status(200).json({ status: "inscription avec succès" });

@@ -7,7 +7,8 @@ let user = mongoose.model("user", {
   password: String,
   email: String,
   tel: Number,
-  heart: [{ type: mongoose.Types.ObjectId, ref: product }],
+  region: String,
+  heart: [Object],
   orders: [{ type: mongoose.Types.ObjectId, ref: orders }],
 });
 

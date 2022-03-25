@@ -16,6 +16,7 @@ const Login = async (request, response) => {
       response.status(200).json({
         status: "success",
         token: token,
+        user: userr._id,
       });
     } else {
       response.status(300).json({ status: "failed" });
