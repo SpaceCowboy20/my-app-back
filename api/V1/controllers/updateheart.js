@@ -11,7 +11,6 @@ let updateHeart = async (request, response) => {
       let decoded = jwt.verify(token, "Spacecowboy");
       let userID = decoded.id;
       let products = request.body.products;
-      console.log(products);
       let user = await User.findByIdAndUpdate(userID, { heart: products });
 
       response.status(200).json({ status: "ok", user });

@@ -1,6 +1,5 @@
 var mongoose = require("mongoose");
 const product = require("./product");
-const user = require("./user");
 
 const orders = mongoose.model("orders", {
   userid: { type: mongoose.Types.ObjectId },
@@ -11,6 +10,7 @@ const orders = mongoose.model("orders", {
     },
   ],
   date: { type: Date, default: Date.now },
+  adress: String,
   status: String,
 });
 
