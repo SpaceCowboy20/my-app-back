@@ -1,6 +1,5 @@
 var mongoose = require("mongoose");
 const orders = require("./order");
-const product = require("./product");
 
 let user = mongoose.model("user", {
   username: String,
