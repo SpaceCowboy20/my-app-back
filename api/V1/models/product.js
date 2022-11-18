@@ -6,11 +6,14 @@ const product = mongoose.model("product", {
   price: Number,
   description: String,
   image: String,
-  cat: String,
+  type: String,
   date: {
     type: Date,
     default: Date.now,
   },
+  weight: String,
+  year: String,
+  pack: [{ name: String, version: String, weight: String }],
 });
 
 module.exports = product;

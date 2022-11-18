@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 const orders = require("./order");
 
 let user = mongoose.model("user", {
+  
   username: String,
   password: String,
   email: String,

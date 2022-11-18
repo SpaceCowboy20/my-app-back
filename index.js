@@ -32,9 +32,7 @@ app.get("/allprod", getAllProducts);
 app.get("/getcats", getAllCats);
 
 mongoose
-  .connect(
-    "mongodb+srv://Spacecowboy:Houloulou20@cluster0.xlfhh.mongodb.net/test"
-  )
+  .connect("mongodb://localhost:27017/test")
   .then(() => {
     console.log("Database Connected Successfully");
   })

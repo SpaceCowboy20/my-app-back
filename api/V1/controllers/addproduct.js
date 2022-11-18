@@ -26,24 +26,29 @@ prod.post("/addproduct", async (request, response) => {
       }
     }
   });
-});
 
-//get all products at once from an array
-///////////////////////////////////////////
-/* let product = request.body.products;
-product.forEach(async (item) => {
-  let exist = Product.find({ title: item.title }, async (error, result) => {
-    result ? true : false;
-  });
-  if (exist) {
-    let doc = new Product({
-      title: item.title,
-      price: item.price,
-      description: item.description,
-      image: item.image,
+  //get all products at once from an array
+  ///////////////////////////////////////////
+  /* let product = request.body.products;
+  product.forEach(async (item) => {
+    let exist = Product.find({ title: item.title }, async (error, result) => {
+      result ? true : false;
     });
-    await doc.save();
-  }
-}); */
+    if (exist) {
+      let doc = new Product({
+        title: item.name,
+        price: item.price,
+        description: item.description,
+        image: item.image,
+        version: item.version,
+        weight: item.weight,
+        pack: item.pack,
+        type: item.type,
+        year: item.year,
+      });
+      await doc.save();
+    }
+  }); */
+});
 
 module.exports = prod;
